@@ -2,6 +2,26 @@
 // array for special characters to choose from in a function
 var symbolsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "?"]
 
+// // idk what this is yet
+// var randPass = {
+//   lower: getRandLower,
+//   upper: getRandUpper,
+//   number: getRandInt,
+//   symbol: getRandChar
+// };
+
+
+
+var getPassLength = function() {
+  var promptLength = prompt("Choose a password length between 8 and 128 characters.")
+  // make entry a number
+  promptLength = parseInt(promptLength);
+  if (promptLength < 8 || promptLength > 128) {
+    alert("Please provide a valid number")
+    return getPassLength();
+  }
+  else return 
+}
 
 var getRandLower = function() {
   // confirm if they want to include lowercase letters
@@ -13,9 +33,6 @@ var getRandLower = function() {
     return false
   }
 }
-  // if (confirmLower === "" || confirmLower === null) {
-  // return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-  // }
 
 var getRandUpper = function() {
   // confirm if they want to include uppercase letters
@@ -68,10 +85,12 @@ function writePassword() {
 
 }
 
+console.log(getPassLength());
 console.log(getRandLower());
 console.log(getRandUpper());
 console.log(getRandInt());
 console.log(getRandChar());
+
 
 // ....Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

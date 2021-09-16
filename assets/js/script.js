@@ -3,25 +3,58 @@
 var symbolsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "?"]
 
 
-var getRandomLower = function() {
+var getRandLower = function() {
   // confirm if they want to include lowercase letters
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  var confirmLower = confirm("Do you want to include lowercase letters?")
+  if (confirmLower) {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  }
+  else {
+    return false
+  }
 }
+  // if (confirmLower === "" || confirmLower === null) {
+  // return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  // }
 
-var getRandomUpper = function() {
+var getRandUpper = function() {
   // confirm if they want to include uppercase letters
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  var confirmUpper = confirm("Do you want to include UPPERcase letters?")
+  if (confirmUpper) {
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  }
+  else {
+    return false
+  }
 }
 
-var getRandomNumber = function() {
+var getRandInt = function() {
   //confirm if they want to inclue numbers
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  var confirmRandInt = confirm("Do you want to include numbers?")
+  if (confirmRandInt) {
+    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+  }
+  else {
+    return false
+  }
+}
+
+var getRandChar = function() {
+  var confirmRandChar = confirm("Do you want to include special characters?")
+  if (confirmRandChar) {
+    return symbolsArray[Math.floor(Math.random()*symbolsArray.length)];
+  }
 }
 
 
 
 
 
+
+// var generatePassword = function() {
+//   document.querySelector(getRandomLower);
+//   console.log(generatePassword)
+// }
 
 // .....Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -34,6 +67,11 @@ function writePassword() {
   passwordText.value = password;
 
 }
+
+console.log(getRandLower());
+console.log(getRandUpper());
+console.log(getRandInt());
+console.log(getRandChar());
 
 // ....Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

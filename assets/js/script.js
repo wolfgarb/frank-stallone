@@ -1,79 +1,31 @@
-// Assignment code here
-// array for special characters to choose from in a function
-var symbolsArray = ["!", "@", "#", "$", "%", "^", "&", "*", "?"]
+var masterArray = []
 
-// // idk what this is yet
-// var randPass = {
-//   lower: getRandLower,
-//   upper: getRandUpper,
-//   number: getRandInt,
-//   symbol: getRandChar
-// };
+var characters = [
+{lower: 'qwertyuiopasdfghjklzxcvbnm'},
+{upper: 'QWERTYUIOPASDFGHJKLZXCVBNM'},
+{num: '0123456789'},
+{sym: '~!@#$%^&*?_'}
+]
 
-
-
-var getPassLength = function() {
-  var promptLength = prompt("Choose a password length between 8 and 128 characters.")
-  // make entry a number
-  promptLength = parseInt(promptLength);
-  if (promptLength < 8 || promptLength > 128) {
-    alert("Please provide a valid number")
-    return getPassLength();
+var confirmLower = confirm("Do you want to include lowercase letters?")
+  
+var confirmUpper = confirm("Do you want to include UPPERcase letters?")
+var confirmRandInt = confirm("Do you want to include numbers?")
+var confirmRandSym = confirm("Do you want to include special characters?")
+var length = prompt("Choose a password length between 8 and 128 characters")
+  if (!length || length < 8 || length > 128 ) {
+    alert("Please enter a valid number")
+    length();
   }
-  else return 
-}
 
-var getRandLower = function() {
-  // confirm if they want to include lowercase letters
-  var confirmLower = confirm("Do you want to include lowercase letters?")
-  if (confirmLower) {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-  }
-  else {
-    return false
-  }
-}
-
-var getRandUpper = function() {
-  // confirm if they want to include uppercase letters
-  var confirmUpper = confirm("Do you want to include UPPERcase letters?")
-  if (confirmUpper) {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-  }
-  else {
-    return false
-  }
-}
-
-var getRandInt = function() {
-  //confirm if they want to inclue numbers
-  var confirmRandInt = confirm("Do you want to include numbers?")
-  if (confirmRandInt) {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-  }
-  else {
-    return false
-  }
-}
-
-var getRandChar = function() {
-  var confirmRandChar = confirm("Do you want to include special characters?")
-  if (confirmRandChar) {
-    return symbolsArray[Math.floor(Math.random()*symbolsArray.length)];
+function generatePassword() {
+  for (var i = 0; i < length; i++) {
+    writePassword();
   }
 }
 
 
-
-
-
-
-// var generatePassword = function() {
-//   document.querySelector(getRandomLower);
-//   console.log(generatePassword)
-// }
-
-// .....Get references to the #generate element
+// // .....Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // ....Write password to the #password input
@@ -85,12 +37,30 @@ function writePassword() {
 
 }
 
-console.log(getPassLength());
-console.log(getRandLower());
-console.log(getRandUpper());
-console.log(getRandInt());
-console.log(getRandChar());
-
-
 // ....Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
+
+
+
+
+// .........begin functions
+// var getPassLength = function() {
+//     var passLength = prompt("Choose a password length between 8 and 128 characters.")
+//       if (passLength === null || passLength === "") {
+//       alert("Please provide a valid number")
+//       return getLength();
+// } // make entry a number
+//     passLength = parseInt(passLength);
+//       if (passLength < 8 || passLength > 128 ) {
+//       alert("Please provide a valid number")
+//      
+// }
+//       for (var i = 0; i < passLength; i++) {
+//       console.log(passLength);
+// }
+// }
+
+// var getRandLower = function() {
+//     return lowerArr[Math.floor(Math.random()*lowerArr.length)]
+// }
+

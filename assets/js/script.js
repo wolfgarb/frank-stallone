@@ -1,66 +1,70 @@
-var masterArray = []
-
-var characters = [
-{lower: 'qwertyuiopasdfghjklzxcvbnm'},
-{upper: 'QWERTYUIOPASDFGHJKLZXCVBNM'},
-{num: '0123456789'},
-{sym: '~!@#$%^&*?_'}
-]
-
-var confirmLower = confirm("Do you want to include lowercase letters?")
-  
-var confirmUpper = confirm("Do you want to include UPPERcase letters?")
-var confirmRandInt = confirm("Do you want to include numbers?")
-var confirmRandSym = confirm("Do you want to include special characters?")
-var length = prompt("Choose a password length between 8 and 128 characters")
-  if (!length || length < 8 || length > 128 ) {
-    alert("Please enter a valid number")
-    length();
-  }
-
-function generatePassword() {
-  for (var i = 0; i < length; i++) {
-    writePassword();
-  }
-}
-
-
-// // .....Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+//.....Get references to the #generate element
 
 // ....Write password to the #password input
+
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword); 
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-// ....Add event listener to generate button
-generateBtn.addEventListener("click", writePassword); 
+
+
+
+function generatePassword() {
+
+  var lower = "qwertyuiopasdfghjklzxcvbnm";
+  var upper = "QWERTYUIOPASDFGHJKLZXCVBNM";
+  var num = "0123456789";
+  var sym = "~!@#$%^&*?_";
+  var password = "";
+
+  var passLength = prompt("Choose a password length between 8 and 128 characters", "0"); 
+      passLength = parseInt(passLength);
+      console.log(passLength)
+      if (passLength >= 8 && passLength <= 128 ) {
+        var confirmLower = confirm("Do you want to include lowercase letters?")
+        var confirmUpper = confirm("Do you want to include UPPERcase letters?")
+        var confirmNum = confirm("Do you want to include numbers?")
+        var confirmSym = confirm("Do you want to include special characters?")
+
+      for (i = 0; i < passLength; i++) {
+
+        if (password.length < passLength) {
+            if (confirmLower) {
+          password += lower[Math.floor(Math.random() * lower.length)];
+        }
+            if (confirmUpper) {
+          password += upper[Math.floor(Math.random() * upper.length)];
+        }
+            if (confirmNum) {
+          password += num[Math.floor(Math.random() * num.length)];
+        }
+            if (confirmSym) {
+          password += sym[Math.floor(Math.random() * sym.length)];
+        }
+
+      } else {
+          break;
+      }
+    }
+return password;
+
+  }
+else {
+  alert("Please enter a valid number");
+  return "Please try again";
+}
+}
 
 
 
 
-// .........begin functions
-// var getPassLength = function() {
-//     var passLength = prompt("Choose a password length between 8 and 128 characters.")
-//       if (passLength === null || passLength === "") {
-//       alert("Please provide a valid number")
-//       return getLength();
-// } // make entry a number
-//     passLength = parseInt(passLength);
-//       if (passLength < 8 || passLength > 128 ) {
-//       alert("Please provide a valid number")
-//      
-// }
-//       for (var i = 0; i < passLength; i++) {
-//       console.log(passLength);
-// }
-// }
 
-// var getRandLower = function() {
-//     return lowerArr[Math.floor(Math.random()*lowerArr.length)]
-// }
+
+
 

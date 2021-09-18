@@ -13,7 +13,7 @@ Can't think of a secure password? You don't have to! Let the computer do the wor
 * CSS
 
 ### This project focused on Javascript 
-Given a foundation of HTML and CSS, I created the <.js> file from (mostly) scratch. This project utilizes the foundational tools of JavaScript like <b>for loops</b>, <b>functions</b>, and <b>variables</b>. 
+Given a foundation of HTML and CSS, I created the > .js file from (mostly) scratch. This project utilizes the foundational tools of JavaScript like <b>for loops</b>, <b>functions</b>, and <b>variables</b>. 
 
 ## Website
 https://wolfgarb.github.io/frank-stallone/

@@ -7,7 +7,7 @@ Can't think of a secure password? You don't have to! Let the computer do the wor
 
 ## Preview
 Here is a mock-up of how the page looks and functions.
-
+<img src="assets\images\password-gen.gif"></img>
 
 ## Built With
 * JavaScript

@@ -5,6 +5,8 @@
 ## Purpose
 Can't think of a secure password? You don't have to! Let the computer do the work for you. Choose a password length, and what to include: lowercase letters, uppercase letters, numbers, or symbols.
 
+## Preview
+Here is a mock-up of how the page looks and functions.
 
 
 ## Built With
